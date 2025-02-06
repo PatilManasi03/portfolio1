@@ -7,7 +7,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 const Contact = () => {
-  // State for suggestion box, name, and email
+  
   const [suggestion, setSuggestion] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -27,18 +27,15 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if name and email are provided
     if (!name || !email) {
       alert('Please provide your name and email address.');
       return;
     }
 
-    // Send the suggestion via mailto link (to your email)
     const subject = "Suggestion from website";
     const body = encodeURIComponent(`Suggestion: ${suggestion}\n\nFrom: ${name}\nEmail: ${email}`);
     const mailtoLink = `mailto:manasipatil0304@gmail.com?subject=${subject}&body=${body}`;
 
-    // Open the default email client with prefilled email content
     window.location.href = mailtoLink;
   };
 
@@ -70,11 +67,10 @@ const Contact = () => {
           </a>
         </div>
 
-        {/* Suggestion Box Section */}
         <div className="suggestion-box">
           <h2>We value your feedback!</h2>
           <form onSubmit={handleSubmit}>
-            {/* Name Input */}
+ 
             <input
               type="text"
               placeholder="Your name"
@@ -83,7 +79,7 @@ const Contact = () => {
               className="suggestion-input"
               required
             />
-            {/* Email Input */}
+    
             <input
               type="email"
               placeholder="Your email address"
@@ -92,7 +88,7 @@ const Contact = () => {
               className="suggestion-input"
               required
             />
-            {/* Suggestion Input */}
+            
             <textarea
               placeholder="Share your suggestions or feedback"
               value={suggestion}

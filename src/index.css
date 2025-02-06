@@ -1,10 +1,15 @@
+/* Root Variables */
 :root {
-  --box-shadow: 5px 5px 10px 10px rgb(101,175,10,0.5);
-  --bg-color:rgb(40,47,97);
+  --box-shadow: 5px 5px 10px 10px rgba(101, 175, 10, 0.5);
+  --bg-color: rgb(40, 47, 97);
 }
+
 body {
   background-color: rgb(11, 26, 51);
   color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 a {
@@ -12,14 +17,17 @@ a {
   color: white;
 }
 
+/* Navbar */
 .nav_bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
 .nav_bar .nav_items {
-  padding: 15px;
+  padding: 10px;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -28,17 +36,20 @@ a {
   border-bottom: 3px solid yellow;
 }
 
+/* Home Section */
 .home {
-  height: 80vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: center;
 }
 
 .home .left {
   background-color: var(--bg-color);
-  width: 620px;
-  text-align: center;
+  width: 100%;
+  max-width: 600px;
   padding: 30px;
   border-radius: 10px;
   border: 1px solid yellow;
@@ -49,78 +60,48 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: yellow;
-  height: 350px;
-  width: 350px;*/
+  width: 100%;
+  max-width: 400px;
 }
 
 .home .right .img img {
-  height: 270px;
-  width: 270px;
+  width: 100%;
   border: 5px solid yellow;
   border-radius: 100%;
-  animation-name: superman;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation: superman 3s infinite;
 }
 
+/* Keyframe Animation */
 @keyframes superman {
-  0%{
-    border-color: blue;
-    transform: translate(0,0px);
-    box-shadow: 10px 10px 100px 50px blue;
-  }
-
-  25%{
-    border-color: rgb(239,244,11);
-    transform: translate(0,0px);
-    box-shadow: 10px 10px 100px 50px rgb(239,244,11);
-  }
-
-  50%{
-    border-color: rgb(12,12,199);
-    transform: translate(0,10px);
-    box-shadow: 10px 10px 100px 50px rgb(12,12,199);
-  }
-
-  75%{
-    border-color: rgb(130,217,160);
-    box-shadow: 10px 10px 100px 50px rgb(130,217,160);
-  }
-  
-  100%{
-    border-color: rgb(50,55,205);
-    transform: translate(0,-0px);
-    box-shadow: 10px 10px 100px 50px rgb(50,55,205);
-  }
+  0%, 100% { border-color: blue; box-shadow: 10px 10px 100px 50px blue; }
+  50% { border-color: yellow; box-shadow: 10px 10px 100px 50px yellow; transform: translateY(10px); }
 }
 
+/* Experience Section */
 .ex {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .ex-items {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: var(--bg-color);
-  margin: 20px;
-  padding: 30px;
-  width: 800px;
+  padding: 20px;
   border-radius: 10px;
   border: 1px solid yellow;
   box-shadow: var(--box-shadow);
+  text-align: center;
 }
 
-.ex-items .right{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
+/* Skills Section */
 .skills {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
 }
 
 .skills .items {
@@ -128,13 +109,11 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /*width: 700px;*/
-  margin: auto;
-  /*background-color: yellow;*/
 }
 
 .skills .items .item {
-  width: calc(33.33%);
+  width: 100%;
+  max-width: 300px;
   background-color: black;
   margin: 10px;
   text-align: center;
@@ -145,46 +124,47 @@ a {
 }
 
 .skills .items .item img {
-  width: 70px;
+  width: 50px;
 }
 
+/* Contact Icons */
 .contact-icon {
-  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .contact-icon .items {
   background-color: black;
-  margin: 10px;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 1px solid yellow;
+  transition: 0.3s;
 }
 
-.contact-icon .item:hover {
+.contact-icon .items:hover {
   background-color: var(--bg-color);
   box-shadow: var(--box-shadow);
 }
 
 .contact-icon .items .icons {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
+/* Suggestion Box */
 .suggestion-box {
-  margin-top: 30px;
-  padding: 20px;
-  /*background-color:lightslategrey;*/
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
   background-color: black;
   box-shadow: var(--box-shadow);
   border: 1px solid yellow;
@@ -195,9 +175,7 @@ a {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 10px;
   font-size: 1rem;
-  resize: vertical;
 }
 
 .suggestion-input:focus {
@@ -206,8 +184,9 @@ a {
 }
 
 .btn-submit {
+  width: 100%;
   margin-top: 10px;
-  padding: 10px 20px;
+  padding: 10px;
   background-color: lightslategray;
   color: white;
   border: none;
@@ -218,4 +197,86 @@ a {
 
 .btn-submit:hover {
   background-color: #0056b3;
+}
+
+/* PROJECTS GRID */
+.projects {
+  width: 90%;
+  margin: auto;
+}
+
+.projects .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects .card {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .right .img {
+    max-width: 300px;
+  }
+
+  .skills .items .item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav_bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills .items .item {
+    width: 100%;
+  }
+
+  .home .right .img {
+    max-width: 250px;
+  }
+
+  .contact-icon .items {
+    height: 50px;
+    width: 50px;
+  }
+
+  .contact-icon .items .icons {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home .right .img {
+    max-width: 200px;
+  }
+
+  .skills .items .item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .contact-icon .items {
+    height: 40px;
+    width: 40px;
+  }
+
+  .contact-icon .items .icons {
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    text-align: center;
+  }
 }
